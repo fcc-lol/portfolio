@@ -7,6 +7,7 @@ categories:
   - tag: 3D Modeling
   - tag: 3D Printing
   - tag: Circuit Python
+  - tag: Electronics
   - tag: Home Assistant
 imageGallery:
   - image: almost-done.jpg
@@ -15,4 +16,5 @@ imageGallery:
   - image: process-2.jpg
   - image: switch-detail.jpg
   - image: on-the-wall.jpg
+  - image: cad-process.png
 ---

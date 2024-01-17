@@ -6,8 +6,10 @@ author: Dan
 categories:
   - tag: 3D Modeling
   - tag: 3D Printing
+  - tag: Electronics
 imageGallery:
   - image: space-lamp-hero.jpg
+  - image: cad-shot.png
   - image: space-lamp-7.jpg
   - image: space-lamp-2.jpg
   - image: space-lamp-3.jpg
