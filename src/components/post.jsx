@@ -8,10 +8,10 @@ const Post = (props) => {
   return (
     <ThemeConsumer>
       {(theme) => {
-        const primaryColor =
-          theme.name === "dark"
-            ? props.darkThemePrimaryColor
-            : props.lightThemePrimaryColor
+        // const primaryColor =
+        //   theme.name === "dark"
+        //     ? theme.tagBackgroundColor
+        //     : theme.tagBackgroundColor
 
         // const secondaryColor =
         //  theme.name === "dark"
@@ -32,7 +32,7 @@ const Post = (props) => {
             <div
               className="post__hero-image"
               style={{
-                borderColor: primaryColor,
+                borderColor: theme.primaryColor,
               }}
             >
               <GatsbyImage
@@ -51,7 +51,7 @@ const Post = (props) => {
                 <span
                   className="post__info__by-line__author"
                   style={{
-                    color: primaryColor,
+                    color: theme.primaryColor,
                   }}
                 >
                   {props.author}
@@ -66,7 +66,10 @@ const Post = (props) => {
                     key={index}
                     className="categories__tag"
                     style={{
-                      backgroundColor: primaryColor,
+                      // backgroundColor: theme.tagBackgroundColor,
+                      backgroundColor: "transparent",
+                      border: `1px solid ${theme.tagTextColor}`,
+                      color: theme.tagTextColor,
                     }}
                   >
                     {category.tag}

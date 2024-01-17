@@ -1,16 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Still Upright`,
-    author: `Zach and Jesse`,
+    title: `DLZ & Assoc.`,
+    author: `DLZ & Assoc.`,
     description: `A cool website`,
     menuLinks: [
       {
         name: `Home`,
         link: `/`,
-      },
-      {
-        name: `Shop`,
-        link: `/shop`,
       },
     ],
   },

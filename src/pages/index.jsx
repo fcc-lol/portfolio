@@ -14,6 +14,7 @@ const Index = ({ data }) => {
         <h1 className="masthead__heading">
           DLZ & Assoc. <span>Dot Com</span>
         </h1>
+        <p className="masthead__tagline">Stuff gets made here</p>
       </div>
       {/* <HighlightsSection /> */}
       <section className="page__main-content">
@@ -28,10 +29,10 @@ const Index = ({ data }) => {
             date={node.frontmatter.date}
             title={node.frontmatter.title}
             heroImage={node.frontmatter.imageGallery[0].image}
-            darkThemePrimaryColor={"#03AEEE"}
-            darkThemeSecondaryColor={"#EC008D"}
-            lightThemePrimaryColor={"#03AEEE"}
-            lightThemeSecondaryColor={"#EC008D"}
+            // darkThemePrimaryColor={"#ff6b6b"}
+            // darkThemeSecondaryColor={"#00b1ec"}
+            // lightThemePrimaryColor={"#ff6b6b"}
+            // lightThemeSecondaryColor={"#00b1ec"}
           />
         ))}
       </section>

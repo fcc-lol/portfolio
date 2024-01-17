@@ -23,7 +23,7 @@ const PostDetail = ({ data, search, pageContext }) => {
     <MainPage className="post-detail" pageTitle={frontmatter.title}>
       <ThemeConsumer>
         {(theme) => {
-          const primaryColor = "#03AEEE"
+          const primaryColor = theme.primaryColor
           // const secondaryColor = theme.name === "dark" ? "#EC008D" : "#EC008D"
 
           return (
@@ -36,7 +36,6 @@ const PostDetail = ({ data, search, pageContext }) => {
                   className={"post-detail__info-container"}
                 >
                   <PostNav
-                    color={primaryColor}
                     nextPost={nextPost}
                     prevPost={prevPost}
                     closeTo={"/"}
@@ -48,12 +47,18 @@ const PostDetail = ({ data, search, pageContext }) => {
                     }}
                   />
 
-                  <h3 className="post-detail__info-container__post-title">
+                  <h3
+                    className="post-detail__info-container__post-title"
+                    style={{ color: theme.text }}
+                  >
                     {frontmatter.title}
                   </h3>
 
                   <p className="post-detail__info-container__post-by-line">
-                    <span className="post-by-line__date">
+                    <span
+                      className="post-by-line__date"
+                      style={{ color: theme.text }}
+                    >
                       {frontmatter.date} by
                     </span>
 
