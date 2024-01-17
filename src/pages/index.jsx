@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import HighlightsSection from "../components/highlightsSection"
+// import HighlightsSection from "../components/highlightsSection"
 import MainPage from "../templates/mainPage"
 import Post from "../components/post"
 import SectionHeading from "../components/sectionHeading"
@@ -49,7 +49,7 @@ Index.propTypes = {
 export const query = graphql`
   query {
     allMarkdownRemark(
-      sort: { fields: frontmatter___date, order: DESC }
+      sort: { frontmatter: { date: DESC } }
       filter: { frontmatter: { contentType: { eq: "post" } } }
     ) {
       totalCount

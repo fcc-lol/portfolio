@@ -45,4 +45,4 @@ MainNav.defaultProps = {
   orientation: "horizontal",
 }
 
-export default MainNav
+export default MainNav;

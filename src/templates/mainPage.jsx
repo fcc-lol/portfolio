@@ -1,6 +1,6 @@
 import React from "react"
 import SiteHeader from "../components/siteHeader"
-import Seo from "../components/seo"
+// import Seo from "../components/seo"
 import { ThemeProvider } from "styled-components"
 import { lightTheme, darkTheme } from "../themes.js"
 import { GlobalStyles } from "../globalStyles"
@@ -10,12 +10,12 @@ import PropTypes from "prop-types"
 
 const MainPage = ({ children, className, pageTitle }) => {
   const [theme, toggleTheme] = useDarkMode()
-  const { title } = useSiteMetadata()
+  // const { title } = useSiteMetadata()
   const themeMode = theme === "light" ? lightTheme : darkTheme
 
   return (
     <ThemeProvider theme={themeMode}>
-      <Seo title={title} />
+      <Head/>
       <GlobalStyles />
       <SiteHeader
         onClickThemeToggle={toggleTheme}

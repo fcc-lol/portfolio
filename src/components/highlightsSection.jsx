@@ -10,7 +10,7 @@ const HighlightsSection = () => {
     query {
       allFile(
         filter: { relativeDirectory: { eq: "assets/images/highlights" } }
-        sort: { order: DESC, fields: sourceInstanceName }
+        sort: { sourceInstanceName: DESC }
       ) {
         edges {
           node {
@@ -84,14 +84,16 @@ const HighlightsSection = () => {
             <button
               className="logo-section__logo-nav__button logo-section__label-container__button--prev"
               onClick={decrement}
+              aria-label="view previous image"
             >
-              <img src={chevronLeftIcon} alt="" />
+              <img src={chevronLeftIcon} alt="left pointing arrow" />
             </button>
             <button
               className="logo-section__logo-nav__button logo-section__label-container__button--next"
               onClick={increment}
+              aria-label="view next image"
             >
-              <img src={chevronRightIcon} alt="" />
+              <img src={chevronRightIcon} alt="right pointing arrow" />
             </button>
           </div>
         </div>

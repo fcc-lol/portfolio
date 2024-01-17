@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import MobileNavToggle from "../components/mobileNavToggle"
 import useScrollPosition from "../hooks/useScrollPosition"
-import MainNav from "../components/mainNav"
+import MainNav from "./mainNav"
 import { ThemeConsumer } from "styled-components"
 import PropTypes from "prop-types"
 

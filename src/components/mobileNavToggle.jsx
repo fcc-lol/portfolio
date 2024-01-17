@@ -9,6 +9,7 @@ const MobileNavToggle = (props) => {
         (props.navIsOpen ? " mobile-nav-toggle--isOpen" : "")
       }
       onClick={props.onClick}
+      aria-label="toggle menu open and closed"
     >
       <div className="mobile-nav-toggle__wrapper">
         <div className="mobile-nav-toggle__bar"></div>
