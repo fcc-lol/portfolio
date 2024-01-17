@@ -1,0 +1,39 @@
+.masthead
+    @include row
+    margin-bottom: 4rem
+
+    @include fit-to(tablet)
+        margin-bottom: 8rem
+        margin-top: 8rem
+
+    
+    &__heading
+        @include col(12)
+        font-size: 3.5rem
+        font-weight: 500
+        line-height: 1
+
+        @include fit-to(tablet)
+            font-size: 6rem
+            letter-spacing: -2.5px
+
+        span
+            font: inherit
+            display: block
+    
+    
+    &__tagline
+        @include col(12)
+        font-size: 1.125rem
+        margin-bottom: 0
+        padding-left: 5.5rem 
+        position: relative
+
+        &:before
+            border-top: 1px solid
+            content: ''
+            left: 0
+            position: absolute
+            top: 50%
+            width: 5rem
+

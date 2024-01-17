@@ -1,0 +1,48 @@
+.image-detail
+	padding-bottom: 4rem
+
+	&__header
+		align-items: center
+		background-color: $dark-theme-backgound
+		border-bottom: 1px solid lighten($dark-theme-backgound, 25%)
+		display: flex
+		flex-flow: row nowrap
+		padding: 2rem
+		position: fixed
+		z-index: 1000
+		width: 100%
+		
+		
+		&__close-button
+			border: 1px solid
+			border-radius: 0.24rem
+			margin-right: 2rem
+			margin-bottom: 0
+			padding: 0.25rem 0.5rem
+			text-decoration: none
+			text-transform: uppercase
+			transition: color .2s ease-out
+
+			&:hover
+				color: #eee !important
+		
+
+		&__image-title
+			color: #eee
+			font-size: 1rem
+			
+			@include fit-to(tablet)
+				font-size: 1.5rem
+
+
+	&__image-container
+		@include grid
+		padding-top: 8rem
+
+
+	&__image-wrapper
+		@include row
+
+		.gatsby-image-wrapper
+			@include col(12)
+

@@ -1,0 +1,161 @@
+.post-detail
+    @include grid
+    padding-bottom: 8rem
+
+
+    &__row-wrapper
+        @include row
+        flex-flow: column nowrap
+        position: relative
+        margin-top: 2rem
+
+        @include fit-to(desktop)
+            flex-flow: row nowrap
+            margin-top: 4rem
+        
+        
+    &__info-container
+        @include col(12)
+        color: #eee
+        flex-flow: column nowrap
+        height: 100%
+        margin-bottom: 1rem
+
+        @include fit-to(tablet)
+            @include col(10)
+            @include col-offset(1)
+
+        @include fit-to(desktop)
+            @include col(4)
+            @include col-offset(0)
+            margin-bottom: 0
+            position: sticky
+            top: 8rem
+        
+        
+        &__eyebrow
+            border: none
+            height: 1px
+            margin: 0 0 0.75rem
+            width: 4rem
+
+
+        &__post-title
+            font-size: 2rem
+            letter-spacing: 0.75px
+            line-height: 1.25
+            margin-bottom: 0.5rem
+
+
+        &__post-by-line
+            margin-bottom: 0.5rem
+
+
+    &__main-content-wrapper
+        margin-top: 1rem
+        width: 100%
+
+        @include fit-to(tablet)
+            @include col(10)
+            @include col-offset(1)
+
+        @include fit-to(desktop)
+            margin-top: 0
+            @include col(8)
+            @include col-offset(0)
+
+
+        &__image
+            margin-bottom: 4rem
+
+            @include fit-to(desktop)
+                margin-bottom: 6rem
+
+
+        &__caption
+            font-size: 1rem
+            padding-left: 3.5rem
+            margin-right: 1rem
+            margin-top: 1rem
+            position: relative
+
+            @include fit-to(tablet)
+                margin-right: 0
+                padding-left: 2.5rem
+
+            &:before
+                border-left: 1px solid
+                border-bottom: 1px solid
+                content: ''
+                height: 1rem
+                left: 1rem
+                position: absolute
+                top: -0.3rem 
+                width: 2rem
+
+            @include fit-to(tablet)
+                font-size: 1.125rem
+
+                &:before
+                    left: 0
+                    top: -0.125rem
+
+    
+        .caption-leadin
+            letter-spacing: 0.5px
+            text-transform: lowercase
+   
+        
+    &__text-container
+        @include col(12)
+        border-top: 1px solid
+        line-height: 130%
+        margin-bottom: 1rem
+        padding-top: 2rem
+
+        h1, h2, h3, h4, h5, h6
+            margin-bottom: 1rem 
+            
+            &:not(:first-child)
+                margin-top: 3rem
+
+        h1
+            font-size: 2.25em
+
+        h2
+            font-size: 2em
+
+        h3
+            font-size: 1.5em
+
+        h4
+            font-size: 1.25em
+
+        h5
+            font-size: 1.125em
+
+        h6
+            font-size: 1em
+
+        p
+            letter-spacing: 0.3px
+            line-height: 150%
+            font-size: 1.125em
+
+        ul
+            list-style-type: circle
+            margin-left: 4rem
+
+        ol
+            list-style-type: upper-roman
+            margin-left: 4rem
+
+        blockquote
+            border-left: 1px solid
+            margin-bottom: 1rem
+            padding: 1rem 0 1rem 2rem
+
+        blockquote > p:last-child
+            margin-bottom: 0
+
+    

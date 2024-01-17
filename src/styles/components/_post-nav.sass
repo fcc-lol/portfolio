@@ -1,0 +1,23 @@
+.post-nav
+    display: flex
+    margin-bottom: 2rem
+
+
+    &__button
+        letter-spacing: 0.5px
+        margin: 0
+        transition: color .3s ease-out, box-shadow .3s ease-out
+
+        &:not(:last-child)
+            margin-right: 1em
+        
+        &--close
+            border: none !important
+        
+        &--disabled
+            cursor: not-allowed !important
+            text-decoration: line-through !important
+            opacity: 0.3
+
+            &:hover
+                box-shadow: none !important

@@ -1,0 +1,56 @@
+backend:
+  name: 'github'
+  repo: 'zachtemkin/still-upright-2'
+  branch: 'master'
+  site_domain: 'still-upright-2.netlify.com'
+
+media_folder: '/src/assets/images'
+
+public_folder: '../assets/images'
+
+collections:
+  - name: 'posts'
+    label: 'Posts'
+    folder: 'src/posts'
+    path: '{{slug}}/index'
+    media_folder: ''
+    public_folder: ''
+    create: true
+    fields:
+      - name: 'contentType'
+        label: 'Content Type'
+        widget: 'hidden'
+        default: 'post'
+      
+      - name: 'title'
+        label: 'Title'
+      
+      - name: 'date'
+        label: 'Date'
+        widget: 'datetime'
+
+      - name: 'author'
+        label: 'Author'
+      
+      - name: 'categories'
+        label: 'Categories'
+        widget: 'list'
+        multiple: true
+        allow_add: true
+        fields:
+          - {name: 'tag', label: 'Tag', widget: 'string', default: 'pic'}
+
+      - name: 'imageGallery'
+        label: 'Images'
+        widget: 'list'
+        multiple: true
+        allow_add: true
+        required: true
+        fields: 
+          - {name: 'image', label: 'Image', widget: 'image'}
+          - {name: 'caption', label: 'Caption', required: false, widget: 'text'}
+
+      - name: 'body'
+        label: 'Body'
+        widget: 'markdown'
+        required: false

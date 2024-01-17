@@ -1,0 +1,17 @@
+.post-filters
+    @include col(12)
+    display: flex
+    margin-bottom: 1rem
+
+    &__filter-button
+        @include bodyFontFamily
+        font-size: 1rem
+
+        i 
+            height: 24px
+            margin-left: 0.5rem
+            width: 24px
+            transition: transform .3s ease-in-out
+
+        &--active > i
+            transform: rotate(180deg)
