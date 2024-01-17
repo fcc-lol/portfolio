@@ -7,5 +7,13 @@ categories:
   - tag: 3D Modeling
   - tag: 3D Printing
 imageGallery:
-  - image: process-7.jpg
+  - image: space-lamp-hero.jpg
+  - image: space-lamp-7.jpg
+  - image: space-lamp-2.jpg
+  - image: space-lamp-3.jpg
+  - image: space-lamp-1.jpg
+  - image: space-lamp-5.jpg
+  - image: space-lamp-6.jpg
+  - image: space-lamp-8.jpg
+  - image: space-lamp-9.jpg
 ---
