@@ -19,14 +19,36 @@ export const useDarkMode = () => {
 
   useEffect(() => {
     const localTheme = window.localStorage.getItem("theme")
-    window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches &&
-    !localTheme
-      ? setMode("dark")
-      : localTheme
-      ? setTheme(localTheme)
-      : setMode("light")
+    const prefersDarkMode = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches
+
+    if (!localTheme) {
+      prefersDarkMode ? setMode("dark") : setMode("light")
+    } else {
+      setTheme(localTheme)
+    }
+
+    const handleThemeChange = (e) => setMode(e.matches ? "dark" : "light")
+
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", handleThemeChange)
+
     setComponentMounted(true)
+
+    return () =>
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .removeEventListener("change", handleThemeChange)
+
+    // window.matchMedia &&
+    // window.matchMedia("(prefers-color-scheme: dark)").matches &&
+    // !localTheme
+    //   ? setMode("dark")
+    //   : localTheme
+    //     ? setTheme(localTheme)
+    //     : setMode("light")
   }, [])
 
   return [theme, toggleTheme, componentMounted]
