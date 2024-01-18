@@ -8,16 +8,6 @@ const Post = (props) => {
   return (
     <ThemeConsumer>
       {(theme) => {
-        // const primaryColor =
-        //   theme.name === "dark"
-        //     ? theme.tagBackgroundColor
-        //     : theme.tagBackgroundColor
-
-        // const secondaryColor =
-        //  theme.name === "dark"
-        //    ? props.darkThemeSecondaryColor
-        //    : props.lightThemeSecondaryColor
-
         return (
           <article className="post">
             <Link
@@ -66,7 +56,6 @@ const Post = (props) => {
                     key={index}
                     className="categories__tag"
                     style={{
-                      // backgroundColor: theme.tagBackgroundColor,
                       backgroundColor: "transparent",
                       border: `1px solid ${theme.tagTextColor}`,
                       color: theme.tagTextColor,

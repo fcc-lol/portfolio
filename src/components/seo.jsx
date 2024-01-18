@@ -1,47 +1,25 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useSiteMetadata } from "../hooks/use-site-metadata"
 import PropTypes from "prop-types"
 
-function SEO({ description, lang, meta, title, bodyScrollDisabled, children }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
-  )
-
-  const metaDescription = description || site.siteMetadata.description
+function SEO({ pageTitle, children }) {
+  const { title, description, bodyScrollDisabled } = useSiteMetadata()
 
   return (
     <>
-      <title>{`${title} | ${site.siteMetadata.title}`}</title>
-      <meta name="description" content={metaDescription} />
-      <meta name="lang" content={lang} />
-      <meta name="og:title" content={title}/>
-      <meta name="og:description" content={metaDescription}/>
-      <body className={bodyScrollDisabled ? "no-scroll" : ""}/>
+      <html lang="en" />
+      <body className={bodyScrollDisabled ? "no-scroll" : ""} />
+      <title>{pageTitle ? `${pageTitle} | ${title}` : `${title}`}</title>
+      <meta name="description" content={description} />
+      <meta name="og:title" content={title} />
+      <meta name="og:description" content={description} />
       {children}
     </>
   )
 }
 
-SEO.defaultProps = {
-  lang: `en`,
-  description: ``,
-}
-
 SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  title: PropTypes.string.isRequired,
-  bodyScrollDisabled: PropTypes.bool,
+  pageTitle: PropTypes.string,
 }
 
 export default SEO

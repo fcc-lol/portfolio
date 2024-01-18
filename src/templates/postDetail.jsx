@@ -5,6 +5,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import MainPage from "../templates/mainPage"
 import { ThemeConsumer } from "styled-components"
 import PropTypes from "prop-types"
+import Seo from "../components/seo.jsx"
 
 const PostDetail = ({ data, search, pageContext }) => {
   const { next, prev } = pageContext
@@ -24,7 +25,7 @@ const PostDetail = ({ data, search, pageContext }) => {
       <ThemeConsumer>
         {(theme) => {
           const primaryColor = theme.primaryColor
-          // const secondaryColor = theme.name === "dark" ? "#EC008D" : "#EC008D"
+          const tagColor = theme.tagTextColor
 
           return (
             <>
@@ -77,7 +78,11 @@ const PostDetail = ({ data, search, pageContext }) => {
                       <p
                         key={index}
                         className="categories__tag"
-                        style={{ backgroundColor: primaryColor }}
+                        style={{
+                          backgroundColor: `transparent`,
+                          border: `1px solid`,
+                          color: tagColor,
+                        }}
                       >
                         {category.tag}
                       </p>
@@ -177,3 +182,7 @@ export const query = graphql`
   }
 `
 export default PostDetail
+
+export const Head = ({ data }) => {
+  return <Seo pageTitle={data.markdownRemark.frontmatter.title} />
+}
