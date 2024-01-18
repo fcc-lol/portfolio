@@ -25,6 +25,7 @@ const PostDetail = ({ data, search, pageContext }) => {
       <ThemeConsumer>
         {(theme) => {
           const primaryColor = theme.primaryColor
+          const tagColor = theme.tagTextColor
 
           return (
             <>
@@ -77,7 +78,11 @@ const PostDetail = ({ data, search, pageContext }) => {
                       <p
                         key={index}
                         className="categories__tag"
-                        style={{ backgroundColor: primaryColor }}
+                        style={{
+                          backgroundColor: `transparent`,
+                          border: `1px solid`,
+                          color: tagColor,
+                        }}
                       >
                         {category.tag}
                       </p>

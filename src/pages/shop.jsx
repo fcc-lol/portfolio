@@ -7,6 +7,7 @@ const Shop = () => {
     <MainPage className="shop" pageTitle="Shop">
       <section className="page__main-content">
         <SectionHeading title="Shop" />
+        <h2>Coming Soon</h2>
       </section>
     </MainPage>
   )

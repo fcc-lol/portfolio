@@ -8,6 +8,10 @@ module.exports = {
         name: `Home`,
         link: `/`,
       },
+      {
+        name: `Shop`,
+        link: `/shop`,
+      },
     ],
   },
   plugins: [

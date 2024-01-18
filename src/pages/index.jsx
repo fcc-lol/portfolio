@@ -4,7 +4,6 @@ import { graphql } from "gatsby"
 import MainPage from "../templates/mainPage"
 import Post from "../components/post"
 import SectionHeading from "../components/sectionHeading"
-import Footer from "../components/footer"
 import PropTypes from "prop-types"
 
 const Index = ({ data }) => {
@@ -36,7 +35,6 @@ const Index = ({ data }) => {
           />
         ))}
       </section>
-      <Footer />
     </MainPage>
   )
 }
