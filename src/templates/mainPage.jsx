@@ -31,8 +31,5 @@ MainPage.propTypes = {
 export default MainPage
 
 export const Head = () => {
-  // const [theme] = useDarkMode()
-  // const themeMode = theme === "light" ? lightTheme : darkTheme
-
   return <Seo />
 }
