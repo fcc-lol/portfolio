@@ -1,6 +1,6 @@
 ---
 contentType: post
-title: Sunset Predictor
+title: AI Sunset Predictor
 date: 2022-05-17T00:00:00.000Z
 author: Leo
 categories:
