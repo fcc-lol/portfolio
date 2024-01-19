@@ -8,6 +8,11 @@ const Post = (props) => {
   return (
     <ThemeConsumer>
       {(theme) => {
+        const postColor = props.accentColor
+          ? theme.name === "dark"
+            ? props.accentColor.dark
+            : props.accentColor.light
+          : theme.primaryColor
         return (
           <article className="post">
             <Link
@@ -22,7 +27,7 @@ const Post = (props) => {
             <div
               className="post__hero-image"
               style={{
-                borderColor: theme.primaryColor,
+                borderColor: postColor,
               }}
             >
               <GatsbyImage
@@ -33,22 +38,21 @@ const Post = (props) => {
             </div>
 
             <div className="post__info">
+              <h3 className="post__info__title">{props.title}</h3>
               <p className="post__info__by-line">
-                <span className="post__info__by-line__date">
+                {/* <span className="post__info__by-line__date">
                   {`${props.date} by `}
-                </span>
+                </span> */}
 
                 <span
                   className="post__info__by-line__author"
                   style={{
-                    color: theme.primaryColor,
+                    color: postColor,
                   }}
                 >
-                  {props.author}
+                  by {props.author}
                 </span>
               </p>
-
-              <h3 className="post__info__title">{props.title}</h3>
 
               <div className="post__info__categories">
                 {props.categories.map((category, index) => (
@@ -57,8 +61,8 @@ const Post = (props) => {
                     className="categories__tag"
                     style={{
                       backgroundColor: "transparent",
-                      border: `1px solid ${theme.tagTextColor}`,
-                      color: theme.tagTextColor,
+                      border: `1px solid ${postColor}b3`,
+                      color: `${postColor}99`,
                     }}
                   >
                     {category.tag}

@@ -18,4 +18,5 @@ imageGallery:
   - image: space-lamp-6.jpg
   - image: space-lamp-8.jpg
   - image: space-lamp-9.jpg
+accentColor: { light: "#8D6159", dark: "#ECC4B9" }
 ---

@@ -1,6 +1,6 @@
 ---
 contentType: post
-title: "digital-paintings"
+title: "digital paintings"
 date: "2022-01-17"
 author: "Zach"
 categories:
@@ -23,4 +23,5 @@ imageGallery:
   - image: poly.jpg
   - image: swamp.jpg
   - image: swirl.jpg
+accentColor: { light: "#000000", dark: "#ffffff" }
 ---

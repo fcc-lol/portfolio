@@ -11,4 +11,5 @@ imageGallery:
   - image: 1.png
   - image: 2.png
   - image: 3.png
+accentColor: { light: "#000000", dark: "#ffffff" }
 ---

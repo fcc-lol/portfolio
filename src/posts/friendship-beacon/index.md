@@ -14,4 +14,5 @@ imageGallery:
   - image: pair.jpg
   - image: guts.jpg
   - image: zach-working.jpg
+accentColor: { light: "#c52f4c", dark: "#ff3152" }
 ---

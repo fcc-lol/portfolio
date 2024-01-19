@@ -8,10 +8,10 @@ import PropTypes from "prop-types"
 
 const Index = ({ data }) => {
   return (
-    <MainPage className="home" pageTitle="DLZ & Assoc.">
+    <MainPage className="home" pageTitle="Full Circuit Collective">
       <div className="masthead">
         <h1 className="masthead__heading">
-          DLZ & Assoc. <span>Dot Com</span>
+          Full Circuit<span>Collective</span>
         </h1>
         <p className="masthead__tagline">Stuff gets made here</p>
       </div>
@@ -28,10 +28,7 @@ const Index = ({ data }) => {
             date={node.frontmatter.date}
             title={node.frontmatter.title}
             heroImage={node.frontmatter.imageGallery[0].image}
-            // darkThemePrimaryColor={"#ff6b6b"}
-            // darkThemeSecondaryColor={"#00b1ec"}
-            // lightThemePrimaryColor={"#ff6b6b"}
-            // lightThemeSecondaryColor={"#00b1ec"}
+            accentColor={node.frontmatter.accentColor}
           />
         ))}
       </section>
@@ -64,6 +61,10 @@ export const query = graphql`
             author
             categories {
               tag
+            }
+            accentColor {
+              light
+              dark
             }
             imageGallery {
               image {

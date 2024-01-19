@@ -15,4 +15,5 @@ imageGallery:
   - image: starmie_01-01.png
   - image: ghastly_01-01.png
   - image: gengar_01-01.png
+accentColor: { light: "#000000", dark: "#ffffff" }
 ---

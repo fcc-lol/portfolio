@@ -41,12 +41,12 @@ const PostDetail = ({ data, search, pageContext }) => {
                     prevPost={prevPost}
                     closeTo={"/"}
                   />
-                  <hr
+                  {/* <hr
                     className="post-detail__info-container__eyebrow"
                     style={{
                       backgroundColor: primaryColor,
                     }}
-                  />
+                  /> */}
 
                   <h3
                     className="post-detail__info-container__post-title"
@@ -88,6 +88,19 @@ const PostDetail = ({ data, search, pageContext }) => {
                       </p>
                     ))}
                   </div>
+
+                  {data.markdownRemark.html && (
+                    <div
+                      className="post-detail__text-container"
+                      style={{
+                        color: primaryColor,
+                        borderColor: primaryColor,
+                      }}
+                      dangerouslySetInnerHTML={{
+                        __html: data.markdownRemark.html,
+                      }}
+                    ></div>
+                  )}
                 </div>
 
                 <div className="post-detail__main-content-wrapper">
@@ -117,19 +130,6 @@ const PostDetail = ({ data, search, pageContext }) => {
                       </p>
                     </div>
                   ))}
-
-                  {data.markdownRemark.html && (
-                    <div
-                      className="post-detail__text-container"
-                      style={{
-                        color: primaryColor,
-                        borderColor: primaryColor,
-                      }}
-                      dangerouslySetInnerHTML={{
-                        __html: data.markdownRemark.html,
-                      }}
-                    ></div>
-                  )}
                 </div>
               </div>
             </>

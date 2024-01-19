@@ -17,4 +17,5 @@ imageGallery:
   - image: switch-detail.jpg
   - image: on-the-wall.jpg
   - image: cad-process.png
+accentColor: { light: "#179AE6", dark: "#24CEF1" }
 ---

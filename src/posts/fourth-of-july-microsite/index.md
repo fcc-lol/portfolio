@@ -7,4 +7,5 @@ categories:
   - tag: Web Services
 imageGallery:
   - image: 1.png
+accentColor: { light: "#7478FA", dark: "#FE45F6" }
 ---
