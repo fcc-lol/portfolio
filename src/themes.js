@@ -10,6 +10,8 @@ export const darkTheme = {
   buttons: "#CDCDCD",
   buttonHover: "#202124",
   headerShadow: "rgba(235, 237, 245, 0.1)",
+  footerBorder: "rgba(255, 255, 255, 0.25)",
+  footerText: "rgba(255, 255, 255, 0.5)",
 }
 
 export const lightTheme = {
@@ -24,4 +26,6 @@ export const lightTheme = {
   buttons: "#1E2431",
   buttonHover: "#A3A5A3",
   headerShadow: "rgba(30, 36, 49, 0.1)",
+  footerBorder: "rgba(0, 0, 0, 0.25)",
+  footerText: "rgba(0, 0, 0, 0.5)",
 }
