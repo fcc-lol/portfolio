@@ -1,44 +1,97 @@
 import React, { useContext } from "react"
-import { ThemeContext } from "styled-components"
+import styled, { css } from "styled-components"
 import { Link } from "gatsby"
-import styled from "styled-components"
 
-const StyledButton = styled(Link)`
+const buttonStyle = css`
   @include bodyFontFamily;
-  color: ${(props) => props.theme.buttons};
-  outline: none;
+  display: inline-flex;
   align-items: center;
-  background-color: transparent;
-  border: 1px solid;
-  color: inherit;
-  cursor: pointer;
-  display: flex;
-  font-weight: 500;
   justify-content: center;
-  line-height: 100%;
+  margin-bottom: 0;
   padding: 0.4em 1.125rem;
+  border: 1px solid;
+  outline: none;
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 100%;
   text-decoration: none;
   text-transform: uppercase;
+  color: ${(props) => props.theme.buttonColor};
+  background-color: transparent;
   transition: box-shadow 0.2s ease-in-out;
+  cursor: pointer;
 
   &:hover {
-    box-shadow: 0px 0px 0px 4px ${(props) => props.theme.buttonHover};
+    box-shadow: 0px 0px 0px 4px ${(props) => props.theme.buttonShadowOnHover};
   }
 `
 
-const SiteButton = ({ to, isDisabled, children, ...restProps }) => {
-  const theme = useContext(ThemeContext)
+const GatsbyLinkButton = styled(Link)`
+  ${buttonStyle}
+  border: ${(props) =>
+    props.buttonType === "bordered" ? "1px solid" : "none"};
+  background-color: ${(props) =>
+    props.buttonType === "filled" ? props.theme.bodyCopyColor : "transparent"};
+  color: ${(props) =>
+    props.buttonType === "filled"
+      ? props.theme.bodyCopyColorInverted
+      : props.theme.buttonColor};
+`
+
+const ExtLinkButton = styled.a`
+  ${buttonStyle}
+  border: ${(props) =>
+    props.buttonType === "bordered" ? "1px solid" : "none"};
+  background-color: ${(props) =>
+    props.buttonType === "filled" ? props.theme.bodyCopyColor : "transparent"};
+  color: ${(props) =>
+    props.buttonType === "filled"
+      ? props.theme.bodyCopyColorInverted
+      : props.theme.buttonColor};
+`
+
+const ButtonButton = styled.button`
+  ${buttonStyle}
+  border: ${(props) =>
+    props.buttonType === "bordered" ? "1px solid" : "none"};
+  background-color: ${(props) =>
+    props.buttonType === "filled" ? props.theme.bodyCopyColor : "transparent"};
+  color: ${(props) =>
+    props.buttonType === "filled"
+      ? props.theme.bodyCopyColorInverted
+      : props.theme.buttonColor};
+`
+
+const SiteButton = ({ to, isDisabled, buttonType, children, ...restProps }) => {
+  const linkType =
+    to !== undefined
+      ? /^\/(?!\/)/.test(to)
+        ? "internal"
+        : "external"
+      : "button"
 
   return (
-    <StyledButton to={to} theme={theme} {...restProps}>
-      {children}
-    </StyledButton>
+    <>
+      {linkType === "internal" ? (
+        <GatsbyLinkButton to={to} buttonType={buttonType} {...restProps}>
+          {children}
+        </GatsbyLinkButton>
+      ) : linkType === "external" ? (
+        <ExtLinkButton href={to} buttonType={buttonType} {...restProps}>
+          {children}
+        </ExtLinkButton>
+      ) : (
+        <ButtonButton buttonType={buttonType} {...restProps}>
+          {children}
+        </ButtonButton>
+      )}
+    </>
   )
 }
 
 SiteButton.defaultProps = {
-  to: "",
   isDisabled: false,
+  buttonType: "bordered",
 }
 
 export default SiteButton

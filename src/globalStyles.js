@@ -13,40 +13,31 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     background-color: ${({ theme }) => theme.body};
-    color: ${({ theme }) => theme.text};
+    color: ${({ theme }) => theme.bodyCopyColor};
   }
 
   .categories__tag {
     color: ${({ theme }) => theme.tag};
   }
 
-  /* .site-button {
-    color: ${({ theme }) => theme.buttons};
-  }
-
-  .site-button:hover, .site-button:focus {
-    outline: none;
-    box-shadow: 0px 0px 0px 4px ${({ theme }) => theme.buttonHover};
-  } */
-
   .post__info__title {
-    color: ${({ theme }) => theme.text};
+    color: ${({ theme }) => theme.bodyCopyColor};
   }
 
   .post-detail__info-container {
-    color: ${({ theme }) => theme.text};
+    color: ${({ theme }) => theme.bodyCopyColor};
   }
 
   .post-nav__button--disabled {
-    color: ${({ theme }) => theme.text} !important;
+    color: ${({ theme }) => theme.bodyCopyColor} !important;
   }
 
   .caption-body {
-    color: ${({ theme }) => theme.text};
+    color: ${({ theme }) => theme.bodyCopyColor};
   }
 
   .post-detail__text-container > p {
-    color: ${({ theme }) => theme.text};
+    color: ${({ theme }) => theme.bodyCopyColor};
   }
 
   .site-header {
@@ -59,7 +50,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .mobile-nav-toggle__bar {
-    background-color: ${({ theme }) => theme.text};
+    background-color: ${({ theme }) => theme.bodyCopyColor};
   }
 
   .footer__content {

@@ -1,9 +1,9 @@
-import React from "react"
+import React, { useContext } from "react"
 import SiteHeader from "../components/siteHeader"
 import Seo from "../components/seo.jsx"
 import Footer from "../components/footer"
 import { ThemeProvider } from "styled-components"
-import { ThemeConsumer } from "styled-components"
+import { ThemeContext } from "styled-components"
 import { lightTheme, darkTheme } from "../themes.js"
 import { GlobalStyles } from "../globalStyles"
 import { useDarkMode } from "../hooks/useDarkMode"
@@ -40,13 +40,10 @@ MainPage.propTypes = {
 export default MainPage
 
 export const Head = () => {
+  const theme = useContext(ThemeContext)
   return (
-    <ThemeConsumer>
-      {(theme) => (
-        <Seo>
-          <meta name="theme-color" content={theme.body}></meta>
-        </Seo>
-      )}
-    </ThemeConsumer>
+    <Seo>
+      <meta name="theme-color" content={theme.body}></meta>
+    </Seo>
   )
 }

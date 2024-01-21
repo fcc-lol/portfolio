@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React from "react"
 import SiteButton from "./siteButton"
 import PropTypes from "prop-types"
 
@@ -11,7 +11,9 @@ const PostNav = ({ nextPost, prevPost, closeTo }) => {
         <SiteButton isDisabled={true}>Prev</SiteButton>
       )}
 
-      <SiteButton to={closeTo}>Home</SiteButton>
+      <SiteButton to={closeTo} buttonType={"text"}>
+        Home
+      </SiteButton>
 
       {nextPost ? (
         <SiteButton to={nextPost}>Next</SiteButton>

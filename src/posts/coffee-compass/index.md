@@ -12,7 +12,17 @@ imageGallery:
   - image: cloudy-day.png
   - image: rainy-day.png
   - image: rainy-night.png
-accentColor: { light: "#308493", dark: "#5AD57E" }
+accentColor: { light: "#655E7A", dark: "#5AD57E" }
 ---
 
-this is content Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis efficitur finibus mi et convallis. Donec eget lectus non nibh maximus egestas nec at tortor. Phasellus nec libero tincidunt, faucibus libero ac, fermentum quam. Sed mattis ligula neque, eu bibendum arcu mollis a. Integer quam lacus, tristique nec tortor sed, aliquet elementum sem. Maecenas ullamcorper, odio ut lobortis congue, libero nunc dictum velit, ac iaculis felis eros ac nisi. Maecenas tincidunt libero vitae nunc posuere suscipit. Suspendisse potenti. Donec mattis a diam a semper. Etiam ipsum odio, hendrerit non ornare in, tempus pharetra ligula. Maecenas id suscipit libero. Duis nibh turpis, congue interdum nulla vitae, convallis interdum arcu. Nunc facilisis lorem sed metus posuere, id lobortis velit lobortis.
+Coffee Compass is a single-function web app for finding nearby coffee shops with a retro-inspired interface.
+
+<p>
+  <SiteButton to="http://nearby.land">Coffee Compass | Live Site</SiteButton>
+</p>
+
+Inspired by Nintendo consoles, and the Pokémon video games, the user interface is designed to mimic a hardware device without a touchscreen, so all interactions happen by tapping simulated phyiscal buttons. Using the arrow buttons, the user can browse different places in the area and tap the details button to view more information.
+
+The color scheme of the app changes subtly with the weather, and there is a dark theme for night time.
+
+Future iterations would include the ability to search for places and things other than coffee.

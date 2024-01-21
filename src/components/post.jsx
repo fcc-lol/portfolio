@@ -40,10 +40,6 @@ const Post = (props) => {
             <div className="post__info">
               <h3 className="post__info__title">{props.title}</h3>
               <p className="post__info__by-line">
-                {/* <span className="post__info__by-line__date">
-                  {`${props.date} by `}
-                </span> */}
-
                 <span
                   className="post__info__by-line__author"
                   style={{
