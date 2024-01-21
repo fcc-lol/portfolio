@@ -23,5 +23,5 @@ imageGallery:
   - image: poly.jpg
   - image: swamp.jpg
   - image: swirl.jpg
-accentColor: { light: "#000000", dark: "#ffffff" }
+accentColor: { light: "#3E4A6D", dark: "#B5BDE3" }
 ---

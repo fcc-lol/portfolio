@@ -9,5 +9,5 @@ categories:
 imageGallery:
   - image: 2.png
   - image: 1.png
-accentColor: { light: "#000000", dark: "#ffffff" }
+accentColor: { light: "#B74F4C", dark: "#E69F9F" }
 ---

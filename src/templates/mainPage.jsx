@@ -13,10 +13,18 @@ const MainPage = ({ children, className, pageTitle }) => {
   const [theme, toggleTheme] = useDarkMode()
   const themeMode = theme === "light" ? lightTheme : darkTheme
 
+  const handleThemeToggleClick = (e) => {
+    e.preventDefault()
+    toggleTheme()
+  }
+
   return (
     <ThemeProvider theme={themeMode}>
       <GlobalStyles />
-      <SiteHeader onClickThemeToggle={toggleTheme} pageTitle={pageTitle} />
+      <SiteHeader
+        onClickThemeToggle={handleThemeToggleClick}
+        pageTitle={pageTitle}
+      />
       <div className={"page " + className}>{children}</div>
       <Footer />
     </ThemeProvider>

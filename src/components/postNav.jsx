@@ -1,70 +1,28 @@
-import React from "react"
-import { Link } from "gatsby"
-import { ThemeConsumer } from "styled-components"
+import React, { useContext } from "react"
+import SiteButton from "./siteButton"
 import PropTypes from "prop-types"
 
-const PostNav = (props) => {
+const PostNav = ({ nextPost, prevPost, closeTo }) => {
   return (
-    <ThemeConsumer>
-      {(theme) => {
-        return (
-          <nav className="post-nav">
-            {props.prevPost ? (
-              <Link
-                to={props.prevPost}
-                className="su-button post-nav__button post-nav__button--prev"
-                style={{
-                  color: theme.primaryColor,
-                  borderColor: theme.primaryColor,
-                }}
-              >
-                Prev
-              </Link>
-            ) : (
-              <p
-                className="su-button post-nav__button post-nav__button--disabled"
-                style={{ color: theme.primaryColor }}
-              >
-                Prev
-              </p>
-            )}
+    <nav className="post-nav">
+      {prevPost ? (
+        <SiteButton to={prevPost}>Prev</SiteButton>
+      ) : (
+        <SiteButton isDisabled={true}>Prev</SiteButton>
+      )}
 
-            <Link
-              to={props.closeTo}
-              className="su-button post-nav__button post-nav__button--close"
-              style={{ color: theme.text }}
-            >
-              Home
-            </Link>
+      <SiteButton to={closeTo}>Home</SiteButton>
 
-            {props.nextPost ? (
-              <Link
-                to={props.nextPost}
-                className="su-button post-nav__button post-nav__button--next"
-                style={{
-                  color: theme.primaryColor,
-                  borderColor: theme.primaryColor,
-                }}
-              >
-                Next
-              </Link>
-            ) : (
-              <p
-                className="su-button post-nav__button post-nav__button--disabled"
-                style={{ color: theme.primaryColor }}
-              >
-                Next
-              </p>
-            )}
-          </nav>
-        )
-      }}
-    </ThemeConsumer>
+      {nextPost ? (
+        <SiteButton to={nextPost}>Next</SiteButton>
+      ) : (
+        <SiteButton isDisabled={true}>Next</SiteButton>
+      )}
+    </nav>
   )
 }
 
 PostNav.propTypes = {
-  color: PropTypes.string,
   nextPost: PropTypes.string,
   prevPost: PropTypes.string,
   closeTo: PropTypes.string,

@@ -45,6 +45,7 @@ categories:
 ${frontMatterTags}
 imageGallery:
 ${frontMatterImages}
+accentColor: {dark: "#ffffff", light: "#000000"}
 ---
 `
 

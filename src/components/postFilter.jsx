@@ -14,11 +14,11 @@ const postFilter = ({ data, location, search }) => {
 
   return (
     <ThemeConsumer>
-      {theme => (
+      {(theme) => (
         <div className="post-filters">
           <button
             className={
-              "su-button post-filters__filter-button" +
+              "site-button post-filters__filter-button" +
               (filtersExposed ? " post-filters__filter-button--active" : "")
             }
             onClick={handleClick}

@@ -20,14 +20,14 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.tag};
   }
 
-  .su-button {
+  /* .site-button {
     color: ${({ theme }) => theme.buttons};
   }
 
-  .su-button:hover, .su-button:focus {
+  .site-button:hover, .site-button:focus {
     outline: none;
     box-shadow: 0px 0px 0px 4px ${({ theme }) => theme.buttonHover};
-  }
+  } */
 
   .post__info__title {
     color: ${({ theme }) => theme.text};

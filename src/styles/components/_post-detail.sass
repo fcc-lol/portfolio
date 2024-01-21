@@ -119,7 +119,7 @@
             margin-bottom: 1rem 
             
             &:not(:first-child)
-                margin-top: 3rem
+                margin-top: 1.5rem
 
         h1
             font-size: 2.25em
@@ -138,6 +138,18 @@
 
         h6
             font-size: 1em
+            display: flex
+        
+        h6 > a
+            padding: 0.5em 1em
+            border: 1px solid
+            text-decoration: none
+
+            &:visited
+                color: inherit
+            
+            &:hover
+                text-decoration: underline
 
         p
             letter-spacing: 0.3px

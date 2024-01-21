@@ -3,9 +3,8 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === `Mdx`) {
     const slug = createFilePath({ node, getNode, basePath: `src/` })
-
     createNodeField({
       node,
       name: `slug`,
@@ -18,7 +17,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const result = await graphql(`
     query {
-      allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
+      allMdx(sort: { frontmatter: { date: DESC } }) {
         edges {
           node {
             fields {
@@ -31,21 +30,27 @@ exports.createPages = async ({ graphql, actions }) => {
                 }
               }
             }
+            internal {
+              contentFilePath
+            }
           }
         }
       }
     }
   `)
 
-  const results = result.data.allMarkdownRemark.edges
-  results.forEach(({ node }, index) => {
+  // console.log("data: ", data)
+
+  const postTemplate = path.resolve(`./src/templates/postDetail.jsx`)
+  const posts = result.data.allMdx.edges
+  posts.forEach(({ node }, index) => {
     createPage({
       path: node.fields.slug,
-      component: path.resolve(`./src/templates/postDetail.jsx`),
+      component: `${postTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
       context: {
         slug: node.fields.slug,
-        prev: index === 0 ? null : results[index - 1].node,
-        next: index === results.length - 1 ? null : results[index + 1].node,
+        prev: index === 0 ? null : posts[index - 1].node,
+        next: index === posts.length - 1 ? null : posts[index + 1].node,
       },
     })
   })

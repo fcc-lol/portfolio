@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
+import SiteButton from "./siteButton"
 import PropTypes from "prop-types"
 
 const MainNav = ({ orientation, theme, onClickThemeToggle }) => {
@@ -26,12 +27,9 @@ const MainNav = ({ orientation, theme, onClickThemeToggle }) => {
         </li>
       ))}
       <li className="header-menu__item">
-        <button
-          onClick={onClickThemeToggle}
-          className="su-button site-header__theme-toggle"
-        >
-          {theme.name === "dark" ? "Turn Off The Dark" : "Turn On The Dark"}
-        </button>
+        <SiteButton onClick={onClickThemeToggle}>
+          {theme.name === "dark" ? "Dark" : "Light"}
+        </SiteButton>
       </li>
     </ul>
   )
@@ -45,4 +43,4 @@ MainNav.defaultProps = {
   orientation: "horizontal",
 }
 
-export default MainNav;
+export default MainNav

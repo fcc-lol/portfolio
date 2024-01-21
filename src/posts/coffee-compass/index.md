@@ -12,7 +12,7 @@ imageGallery:
   - image: cloudy-day.png
   - image: rainy-day.png
   - image: rainy-night.png
-accentColor: { light: "5DDE82", dark: "#00ff00" }
+accentColor: { light: "#308493", dark: "#5AD57E" }
 ---
 
 this is content Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis efficitur finibus mi et convallis. Donec eget lectus non nibh maximus egestas nec at tortor. Phasellus nec libero tincidunt, faucibus libero ac, fermentum quam. Sed mattis ligula neque, eu bibendum arcu mollis a. Integer quam lacus, tristique nec tortor sed, aliquet elementum sem. Maecenas ullamcorper, odio ut lobortis congue, libero nunc dictum velit, ac iaculis felis eros ac nisi. Maecenas tincidunt libero vitae nunc posuere suscipit. Suspendisse potenti. Donec mattis a diam a semper. Etiam ipsum odio, hendrerit non ornare in, tempus pharetra ligula. Maecenas id suscipit libero. Duis nibh turpis, congue interdum nulla vitae, convallis interdum arcu. Nunc facilisis lorem sed metus posuere, id lobortis velit lobortis.

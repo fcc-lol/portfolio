@@ -18,7 +18,7 @@ const Index = ({ data }) => {
       {/* <HighlightsSection /> */}
       <section className="page__main-content">
         <SectionHeading title="Recent Work" />
-        {data.allMarkdownRemark.edges.map(({ node }, index) => (
+        {data.allMdx.edges.map(({ node }, index) => (
           <Post
             key={node.id}
             index={index}
@@ -43,14 +43,13 @@ Index.propTypes = {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(
+    allMdx(
       sort: { frontmatter: { date: DESC } }
       filter: { frontmatter: { contentType: { eq: "post" } } }
     ) {
       totalCount
       edges {
         node {
-          html
           fields {
             slug
           }
