@@ -9,9 +9,10 @@
     z-index: 2000    
 
     @include fit-to(tablet)
+        height: 5rem
         box-shadow: none !important
         margin-bottom: 4rem
-        margin-top: 1rem
+        padding-top: 1rem
     
     &__wrapper
         @include row
@@ -62,20 +63,25 @@
 
     .header-menu--vertical
         display: none
-        position: relative
-        flex-flow: column nowrap
-        height: 100vh
         left: 0
         overflow: hidden
-        padding: 1rem
         position: fixed
         top: 4rem
         width: 100%
         z-index: 1000
+        height: 100vh 
+        flex-flow: column nowrap
+        padding: 1rem
         
-        li:not(:last-child)
-            margin-bottom: 1.5em
-            margin-right: 0
+        .header-menu__links
+            display: flex
+            position: relative
+            padding-bottom: 2rem
+            flex-flow: column nowrap
+
+            li:not(:last-child)
+                margin-bottom: 1.5em
+                margin-right: 0
     
     
     .header-menu--vertical .header-menu__item
@@ -106,12 +112,18 @@
 
 
         .header-menu--horizontal
+            width: 100vw
+            justify-content: space-between
             align-items: center
             flex-flow: row
 
-            li:not(:last-child)
-                margin-bottom: 0
-                margin-right: 3rem
+            .header-menu__links
+                align-items: center
+                flex-flow: row
+
+                li:not(:last-child)
+                    margin-bottom: 0
+                    margin-right: 3rem
 
     
 .header-menu
@@ -135,25 +147,21 @@
         padding-bottom: 0.125rem
         position: relative
         text-decoration: none
-        transition: border-color .5s cubic-bezier(0.22, 1, 0.36, 1)
+        transition: all .5s cubic-bezier(0.22, 1, 0.36, 1)
+
+        &:hover
+            opacity: 0.6
+
+        &:active
+            opacity: 0.4
+            transform: scale(0.95)
 
         &--active, &--active:hover
             border-color: inherit !important
             border-bottom: 1px solid
-
-        &:after
-            border-top: 1px solid 
-            border-right: 1px solid
-            color: inherit
-            content: ''
-            height: 0.75rem
-            opacity: 0
-            position: absolute
-            right: -1rem
-            top: -0.25rem
-            transform: translate(-50%, 50%)
-            transition: opacity .5s cubic-bezier(0.22, 1, 0.36, 1), transform .5s cubic-bezier(0.22, 1, 0.36, 1)
-            width: 0.75rem
+            opacity: 1
+            transform: scale(1)
+            cursor: default
         
         &:focus, &:hover
             box-shadow: none !important

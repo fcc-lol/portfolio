@@ -63,7 +63,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .footer__content {
-    border-color: ${({ theme }) => theme.headerShadow};
-    color: ${({ theme }) => theme.text};
+    border-color: ${({ theme }) => theme.footerBorder};
+    color: ${({ theme }) => theme.footerText};
   }
 `

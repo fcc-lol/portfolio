@@ -15,17 +15,19 @@ const MainNav = ({ orientation, theme, onClickThemeToggle }) => {
         (orientation === "vertical" ? " header-menu--vertical" : "")
       }
     >
-      {menuLinks.map((item, index) => (
-        <li className="header-menu__item" key={index}>
-          <Link
-            className="header-menu__link"
-            activeClassName="header-menu__link--active"
-            to={item.link}
-          >
-            {item.name}
-          </Link>
-        </li>
-      ))}
+      <ul className="header-menu__links">
+        {menuLinks.map((item, index) => (
+          <li className="header-menu__item" key={index}>
+            <Link
+              className="header-menu__link"
+              activeClassName="header-menu__link--active"
+              to={item.link}
+            >
+              {item.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
       <li className="header-menu__item">
         <SiteButton onClick={onClickThemeToggle}>
           {theme.name === "dark" ? "Dark" : "Light"}
