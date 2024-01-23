@@ -15,7 +15,7 @@ imageGallery:
 accentColor: { light: "#655E7A", dark: "#5AD57E" }
 ---
 
-Coffee Compass is a single-function web app for finding nearby coffee shops with a retro-inspired interface.
+**Coffee Compass is a single-function web app for finding nearby coffee shops with a retro-inspired interface.**
 
 <p>
   <SiteButton to="http://nearby.land">Coffee Compass | Live Site</SiteButton>
