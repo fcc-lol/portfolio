@@ -28,7 +28,10 @@ const MainNav = ({ orientation, theme, onClickThemeToggle }) => {
           </li>
         ))}
       </ul>
-      <li style={{ marginBottom: 0 }}>
+      <li
+        className="header-menu__item"
+        style={{ fontSize: "100%", marginBottom: 0 }}
+      >
         <SiteButton onClick={onClickThemeToggle}>
           {theme.name === "dark" ? "Dark" : "Light"}
         </SiteButton>
