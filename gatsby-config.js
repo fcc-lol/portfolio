@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `DLZ & Assoc.`,
-    author: `DLZ & Assoc.`,
-    description: `A cool website`,
+    title: `Full Circuit Collective`,
+    author: `Full Circuit Collective`,
+    description: `The portfolio of an art and technology collective based in NYC`,
     menuLinks: [
       {
         name: `Home`,
@@ -72,8 +72,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `GatsbyJS`,
-        short_name: `GatsbyJS`,
+        name: `Full Circuit Collective`,
+        short_name: `Full Circuit Collective`,
         start_url: `/`,
         display: `standalone`,
         icon: `src/assets/images/icon.svg`, // This path is relative to the root of the site.
