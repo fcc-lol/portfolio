@@ -11,7 +11,11 @@ const PostNav = ({ nextPost, prevPost, closeTo }) => {
         <SiteButton isDisabled={true}>Prev</SiteButton>
       )}
 
-      <SiteButton to={closeTo} buttonType={"text"}>
+      <SiteButton
+        className="post-nav__button--close"
+        to={closeTo}
+        buttonType={"text"}
+      >
         Home
       </SiteButton>
 

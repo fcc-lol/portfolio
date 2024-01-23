@@ -13,6 +13,10 @@
         
         &--close
             border: none !important
+            display: inline-flex
+
+            @include fit-to(tablet)
+                display: none
         
         &--disabled
             cursor: not-allowed !important
