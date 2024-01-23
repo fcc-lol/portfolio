@@ -24,10 +24,7 @@ const buttonStyle = css`
   &:hover {
     box-shadow: 0px 0px 0px 4px ${(props) => props.theme.buttonShadowOnHover};
   }
-`
 
-const GatsbyLinkButton = styled(Link)`
-  ${buttonStyle}
   border: ${(props) =>
     props.buttonType === "bordered" ? "1px solid" : "none"};
   background-color: ${(props) =>
@@ -38,28 +35,20 @@ const GatsbyLinkButton = styled(Link)`
       : props.theme.buttonColor};
 `
 
-const ExtLinkButton = styled.a`
+const GatsbyLinkButton = styled(({ buttonType, ...props }) => (
+  <Link {...props} />
+))`
   ${buttonStyle}
-  border: ${(props) =>
-    props.buttonType === "bordered" ? "1px solid" : "none"};
-  background-color: ${(props) =>
-    props.buttonType === "filled" ? props.theme.bodyCopyColor : "transparent"};
-  color: ${(props) =>
-    props.buttonType === "filled"
-      ? props.theme.bodyCopyColorInverted
-      : props.theme.buttonColor};
 `
 
-const ButtonButton = styled.button`
+const ExtLinkButton = styled(({ buttonType, ...props }) => <a {...props} />)`
   ${buttonStyle}
-  border: ${(props) =>
-    props.buttonType === "bordered" ? "1px solid" : "none"};
-  background-color: ${(props) =>
-    props.buttonType === "filled" ? props.theme.bodyCopyColor : "transparent"};
-  color: ${(props) =>
-    props.buttonType === "filled"
-      ? props.theme.bodyCopyColorInverted
-      : props.theme.buttonColor};
+`
+
+const ButtonButton = styled(({ buttonType, ...props }) => (
+  <button {...props} />
+))`
+  ${buttonStyle}
 `
 
 const SiteButton = ({ to, isDisabled, buttonType, children, ...restProps }) => {
@@ -73,11 +62,11 @@ const SiteButton = ({ to, isDisabled, buttonType, children, ...restProps }) => {
   return (
     <>
       {linkType === "internal" ? (
-        <GatsbyLinkButton to={to} buttonType={buttonType} {...restProps}>
+        <GatsbyLinkButton buttonType={buttonType} to={to} {...restProps}>
           {children}
         </GatsbyLinkButton>
       ) : linkType === "external" ? (
-        <ExtLinkButton href={to} buttonType={buttonType} {...restProps}>
+        <ExtLinkButton buttonType={buttonType} href={to} {...restProps}>
           {children}
         </ExtLinkButton>
       ) : (
