@@ -5,6 +5,8 @@ import MainPage from "../templates/mainPage"
 import Post from "../components/post"
 import SectionHeading from "../components/sectionHeading"
 import PropTypes from "prop-types"
+import Seo from "../components/seo.jsx"
+import { lightTheme, darkTheme } from "../themes.js"
 
 const Index = ({ data }) => {
   return (
@@ -84,3 +86,20 @@ export const query = graphql`
   }
 `
 export default Index
+
+export const Head = () => {
+  return (
+    <Seo>
+      <meta
+        name="theme-color"
+        content={lightTheme.body}
+        media="(prefers-color-scheme: light)"
+      />
+      <meta
+        name="theme-color"
+        content={darkTheme.body}
+        media="(prefers-color-scheme: dark)"
+      />
+    </Seo>
+  )
+}

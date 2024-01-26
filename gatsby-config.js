@@ -77,6 +77,7 @@ module.exports = {
         start_url: `/`,
         display: `standalone`,
         icon: `src/assets/images/icon.svg`, // This path is relative to the root of the site.
+        theme_color_in_head: false, // This will avoid adding theme-color meta tag.
       },
     },
     {

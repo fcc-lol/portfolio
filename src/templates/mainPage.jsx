@@ -1,9 +1,7 @@
-import React, { useContext } from "react"
+import React, { useEffect } from "react"
 import SiteHeader from "../components/siteHeader"
-import Seo from "../components/seo.jsx"
 import Footer from "../components/footer"
 import { ThemeProvider } from "styled-components"
-import { ThemeContext } from "styled-components"
 import { lightTheme, darkTheme } from "../themes.js"
 import { GlobalStyles } from "../globalStyles"
 import { useDarkMode } from "../hooks/useDarkMode"
@@ -17,6 +15,27 @@ const MainPage = ({ children, className, pageTitle }) => {
     e.preventDefault()
     toggleTheme()
   }
+
+  useEffect(() => {
+    const metaThemeTags = document.querySelectorAll(`meta[name=theme-color]`)
+    const inverseTheme = theme === "light" ? "dark" : "light"
+
+    metaThemeTags &&
+      metaThemeTags.forEach((tag) => {
+        if (tag.parentNode) {
+          tag.parentNode.removeChild(tag)
+        }
+      })
+
+    const newMetaThemeTag = document.createElement("meta")
+    newMetaThemeTag.setAttribute("name", "theme-color")
+    newMetaThemeTag.setAttribute("content", themeMode.body)
+    newMetaThemeTag.setAttribute(
+      "media",
+      `(prefers-color-scheme: ${inverseTheme})`
+    )
+    document.head.appendChild(newMetaThemeTag)
+  }, [theme, themeMode.body])
 
   return (
     <ThemeProvider theme={themeMode}>
@@ -38,12 +57,3 @@ MainPage.propTypes = {
 }
 
 export default MainPage
-
-export const Head = () => {
-  const theme = useContext(ThemeContext)
-  return (
-    <Seo>
-      <meta name="theme-color" content={theme.body}></meta>
-    </Seo>
-  )
-}

@@ -41,14 +41,6 @@ export const useDarkMode = () => {
       window
         .matchMedia("(prefers-color-scheme: dark)")
         .removeEventListener("change", handleThemeChange)
-
-    // window.matchMedia &&
-    // window.matchMedia("(prefers-color-scheme: dark)").matches &&
-    // !localTheme
-    //   ? setMode("dark")
-    //   : localTheme
-    //     ? setTheme(localTheme)
-    //     : setMode("light")
   }, [])
 
   return [theme, toggleTheme, componentMounted]

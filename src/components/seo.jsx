@@ -7,9 +7,9 @@ function SEO({ pageTitle, children }) {
 
   return (
     <>
+      <title>{pageTitle ? `${pageTitle} | ${title}` : `${title}`}</title>
       <html lang="en" />
       <body className={bodyScrollDisabled ? "no-scroll" : ""} />
-      <title>{pageTitle ? `${pageTitle} | ${title}` : `${title}`}</title>
       <meta name="description" content={description} />
       <meta name="og:title" content={title} />
       <meta name="og:description" content={description} />
