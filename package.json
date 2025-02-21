@@ -9,11 +9,12 @@
     "develop": "gatsby develop",
     "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
+    "start": "gatsby build && gatsby serve -H 0.0.0.0 -p ${PORT:-8000}",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "hello": "echo \"Hello, world!\""
   },
   "dependencies": {
     "@gatsbyjs/reach-router": "^2.0.0",
