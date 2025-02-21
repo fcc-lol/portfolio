@@ -9,7 +9,7 @@
     "develop": "gatsby develop",
     "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "gatsby build && gatsby serve -p $PORT",
+    "start": "gatsby build && gatsby serve -H 0.0.0.0 -p ${PORT:-8000}",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
