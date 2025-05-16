@@ -23,3 +23,5 @@ imageGallery:
     caption: "Game of Life – A simulation of Conway's Game of Life."
 accentColor: { light: "#c52f4c", dark: "#ff3152" }
 ---
+
+Rolodex is a retro-futuristic desktop console that can be programmed with 24 apps
