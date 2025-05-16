@@ -3,7 +3,7 @@ import styled, { css } from "styled-components"
 import { Link } from "gatsby"
 
 const buttonStyle = css`
-  @include bodyFontFamily;
+  font-family: "franklin-gothic-urw", helvetica, arial, sans-serif;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -33,22 +33,36 @@ const buttonStyle = css`
     props.buttonType === "filled"
       ? props.theme.bodyCopyColorInverted
       : props.theme.buttonColor};
+
+  ${(props) =>
+    props.isDisabled &&
+    css`
+      opacity: 0.5;
+      cursor: not-allowed;
+      pointer-events: none;
+
+      &:hover {
+        box-shadow: none;
+      }
+    `}
 `
 
-const GatsbyLinkButton = styled(({ buttonType, ...props }) => (
+const GatsbyLinkButton = styled(({ buttonType, isDisabled, ...props }) => (
   <Link {...props} />
 ))`
   ${buttonStyle}
 `
 
-const ExtLinkButton = styled(({ buttonType, children, ...props }) => (
-  <a {...props}>{children}</a>
-))`
+const ExtLinkButton = styled(
+  ({ buttonType, isDisabled, children, ...props }) => (
+    <a {...props}>{children}</a>
+  )
+)`
   ${buttonStyle}
 `
 
-const ButtonButton = styled(({ buttonType, ...props }) => (
-  <button {...props} />
+const ButtonButton = styled(({ buttonType, isDisabled, ...props }) => (
+  <button disabled={isDisabled} {...props} />
 ))`
   ${buttonStyle}
 `
@@ -64,15 +78,29 @@ const SiteButton = ({ to, isDisabled, buttonType, children, ...restProps }) => {
   return (
     <>
       {linkType === "internal" ? (
-        <GatsbyLinkButton buttonType={buttonType} to={to} {...restProps}>
+        <GatsbyLinkButton
+          buttonType={buttonType}
+          isDisabled={isDisabled}
+          to={to}
+          {...restProps}
+        >
           {children}
         </GatsbyLinkButton>
       ) : linkType === "external" ? (
-        <ExtLinkButton buttonType={buttonType} href={to} {...restProps}>
+        <ExtLinkButton
+          buttonType={buttonType}
+          isDisabled={isDisabled}
+          href={to}
+          {...restProps}
+        >
           {children}
         </ExtLinkButton>
       ) : (
-        <ButtonButton buttonType={buttonType} {...restProps}>
+        <ButtonButton
+          buttonType={buttonType}
+          isDisabled={isDisabled}
+          {...restProps}
+        >
           {children}
         </ButtonButton>
       )}
