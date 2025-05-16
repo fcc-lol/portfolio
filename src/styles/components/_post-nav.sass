@@ -3,6 +3,16 @@
     margin-bottom: 2rem
     justify-content: space-between
 
+    @include fit-to(tablet)
+        justify-content: flex-start
+         
+        &__button:first-child
+            background-color: red
+            margin-right: 1rem
+
+    @include fit-to(desktop)
+        justify-content: space-between
+
     &__button
         letter-spacing: 0.5px
         margin: 0
@@ -16,7 +26,7 @@
             display: inline-flex
 
             @include fit-to(tablet)
-                display: none
+                display: none !important
         
         &--disabled
             cursor: not-allowed !important

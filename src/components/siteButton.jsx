@@ -41,7 +41,9 @@ const GatsbyLinkButton = styled(({ buttonType, ...props }) => (
   ${buttonStyle}
 `
 
-const ExtLinkButton = styled(({ buttonType, ...props }) => <a {...props} />)`
+const ExtLinkButton = styled(({ buttonType, children, ...props }) => (
+  <a {...props}>{children}</a>
+))`
   ${buttonStyle}
 `
 

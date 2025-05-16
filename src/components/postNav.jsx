@@ -6,7 +6,9 @@ const PostNav = ({ nextPost, prevPost, closeTo }) => {
   return (
     <nav className="post-nav">
       {prevPost ? (
-        <SiteButton to={prevPost}>Prev</SiteButton>
+        <SiteButton className="post-nav__button" to={prevPost}>
+          Prev
+        </SiteButton>
       ) : (
         <SiteButton isDisabled={true}>Prev</SiteButton>
       )}
