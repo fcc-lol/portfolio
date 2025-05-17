@@ -13,6 +13,7 @@ function SEO({ pageTitle, children }) {
       <meta name="description" content={description} />
       <meta name="og:title" content={title} />
       <meta name="og:description" content={description} />
+      <meta httpEquiv="Content-Security-Policy" content="frame-ancestors *;" />
       {children}
     </>
   )
